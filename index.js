@@ -6,19 +6,25 @@ const pc = newPlayableCharacter(100, 110)
 // Create a non-playable character
 const npc = newNonPlayableCharacter(50, 300)
 
-// npc.walkNorth(1400, () => {
-//     npc.walkEast(1200, () => {
-//         npc.walkSouth(300, () => {
-//             npc.walkEast(1500, () => {
-//                 npc.walkSouth(1500, () => {
-//                     npc.walkEast(2700, () => {
-//                         npc.walkEast(400)
-//                     })
-//                 })
-//             })
-//         })
-//     })
-// })
+// have npm walk north for 1.4 seconds and then callback
+npc.walkNorth(1400, () => {
+    // have npm walk east for 1.2 seconds and then callback
+    npc.walkEast(1200, () => {
+        // have npm walk south for .3 seconds and then callback
+        npc.walkSouth(300, () => {
+            // have npm walk east for 1.5 seconds and then callback
+            npc.walkEast(1500, () => {
+                // have npm walk south for 1.5 seconds and then callback
+                npc.walkSouth(1500, () => {
+                    // have npm walk east for 2.7 seconds and then callback
+                    npc.walkEast(2700, () => {
+                        npc.walkEast(400)
+                    })
+                })
+            })
+        })
+    })
+})
 
 // Create the inventory
 const inventory = newInventory()
