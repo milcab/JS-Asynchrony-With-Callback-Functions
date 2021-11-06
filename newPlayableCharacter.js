@@ -1,5 +1,6 @@
 function newPlayableCharacter(x, y) {
     const element = newImage('assets/green-character/static.gif')
+    element.classList.add('character')
     element.style.zIndex = 1;
 
     function handleDirectionChange(direction) {
